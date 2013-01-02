@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Page title</title>
+  <script src="prototype.js" type="text/javascript"></script>
+  <script src="scriptaculous/scriptaculous.js" type="text/javascript"></script>
+  <script src="scriptaculous/unittest.js" type="text/javascript"></script>
+  <!-- other JavaScript includes -->
+  <script src="../src/format-currency.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="scriptaculous/test.css" type="text/css" />
+</head>
+<body>
+
+<!-- Log output -->
+<div id="testlog"> </div>
+
+<!-- here go any elements you do the testing on -->
+
+<!-- Tests -->
+<script type="text/javascript" language="javascript">
+// <![CDATA[
+  new Test.Unit.Runner({
+    // optional setup function, run before each individual test case
+    setup: function() { with(this) {
+      // code
+    }},
+    // optional teardown function, run after each individual test case
+    teardown: function() { with(this) {
+      // code
+    }},
+
+    testNumberToCurrency: function() { with(this) {
+            assertEqual('$1.20', numberToCurrency(1.2));
+            assertEqual('$1.20', numberToCurrency('1.2'));
+            assertEqual('$1.20', numberToCurrency('1.202222'));
+            assertEqual('$1.21', numberToCurrency('1.205555'));
+            assertEqual('$1.20', numberToCurrency('$1.20'));
+            assertEqual('$1.20', numberToCurrency('$1.2'));
+            assertEqual('$1,000.20', numberToCurrency('$1000.2'));
+            assertEqual('$10,000.20', numberToCurrency('$10000.2'));
+            assertEqual('$100,000.20', numberToCurrency('$100000.2'));
+            assertEqual('$1,000,000.20', numberToCurrency('$1000000.2'));
+            assertEqual('$10,000,000.20', numberToCurrency('$10000000.2'));
+    }}
+  });
+// ]]>
+</script>
+</body>
+</html>
