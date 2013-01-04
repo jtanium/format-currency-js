@@ -42,6 +42,18 @@
             assertEqual('$100,000.20', numberToCurrency('$100000.2'));
             assertEqual('$1,000,000.20', numberToCurrency('$1000000.2'));
             assertEqual('$10,000,000.20', numberToCurrency('$10000000.2'));
+
+            assertEqual('-$1.20', numberToCurrency(-1.2));
+            assertEqual('-$1.20', numberToCurrency('-1.2'));
+            assertEqual('-$1.20', numberToCurrency('-1.202222'));
+            assertEqual('-$1.21', numberToCurrency('-1.205555'));
+            assertEqual('-$1.20', numberToCurrency('-$1.20'));
+            assertEqual('-$1.20', numberToCurrency('-$1.2'));
+            assertEqual('-$1,000.20', numberToCurrency('-1000.2'));
+            assertEqual('-$10,000.20', numberToCurrency('-10000.2'));
+            assertEqual('-$100,000.20', numberToCurrency('-100000.2'));
+            assertEqual('-$1,000,000.20', numberToCurrency('-1000000.2'));
+            assertEqual('-$10,000,000.20', numberToCurrency('-10000000.2'));
     }}
   });
 // ]]>
