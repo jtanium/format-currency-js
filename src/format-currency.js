@@ -32,5 +32,5 @@ function numberToCurrency(number, options) {
     }
     numberFormatted.unshift(numberStr); // there are less than three digits in numberStr, so prepend them
 
-    return format.gsub(/%u/,unit).gsub(/%n/,numberFormatted.join('')); // put it all together
+    return format.replace(/%u/g,unit).replace(/%n/g,numberFormatted.join('')); // put it all together
 }
